@@ -1,0 +1,59 @@
+php-hamcrest (2.0.1-2) unstable; urgency=medium
+
+  * Forwarded patch
+  * Rename main branch to debian/latest (DEP-14)
+  * Update watch file format version to 4.
+  * Update Standards-Version to 4.5.1
+  * Adapt to recent version of PHPUnit (9)
+
+ -- David Prévot <taffit@debian.org>  Sat, 12 Dec 2020 16:23:57 -0400
+
+php-hamcrest (2.0.1-1) unstable; urgency=medium
+
+  [ Graham Campbell ]
+  * PHP 8 support
+  * Release 2.0.1
+
+  [ David Prévot ]
+  * Set upstream metadata fields:
+    Bug-Database, Bug-Submit, Repository, Repository-Browse.
+  * Update standards version to 4.5.0, no changes needed.
+  * Set Rules-Requires-Root: no.
+  * Drop versioned dependency satisfied in (old)stable
+  * Use debhelper-compat 13
+  * Simplify override_dh_auto_test
+
+ -- David Prévot <taffit@debian.org>  Sun, 12 Jul 2020 12:22:34 -0400
+
+php-hamcrest (2.0.0-3) unstable; urgency=medium
+
+  * Update standards version, no changes needed.
+
+ -- David Prévot <taffit@debian.org>  Fri, 13 Sep 2019 05:11:28 -1000
+
+php-hamcrest (2.0.0-2) unstable; urgency=medium
+
+  * Upload to unstable with recent php-mockery
+  * Compatibility with recent PHPUnit
+  * Use debhelper-compat 12
+  * Drop get-orig-source target
+  * Use debian/clean for directories
+  * Move repository to salsa.d.o
+  * Use https in Format
+  * Update Standards-Version to 4.3.0
+
+ -- David Prévot <taffit@debian.org>  Fri, 28 Jun 2019 08:41:56 -1000
+
+php-hamcrest (2.0.0-1) experimental; urgency=medium
+
+  * Upload to experimental since php-mockery depends on php-hamcrest (<< 2~~)
+  * Simplify CI
+  * Update Standards-Version to 3.9.7
+
+ -- David Prévot <taffit@debian.org>  Thu, 25 Feb 2016 21:58:18 -0400
+
+php-hamcrest (1.2.2-1) unstable; urgency=low
+
+  * Initial release (php-mockery dependency)
+
+ -- David Prévot <taffit@debian.org>  Mon, 01 Feb 2016 20:34:59 -0400

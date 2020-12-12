@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+%:
+	dh $@ --with phpcomposer
+
+override_dh_auto_build:
+	phpab --output hamcrest/Hamcrest/autoload.php hamcrest
+	mkdir --parents vendor
+	phpab \
+		--template debian/autoload.php.tpl \
+		--output vendor/autoload.php \
+		tests generator
+
+override_dh_auto_test:
+	phpunit --include-path hamcrest --configuration tests/phpunit.xml.dist

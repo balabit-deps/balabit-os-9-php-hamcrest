@@ -1,0 +1,3 @@
+hamcrest/Hamcrest/autoload.php
+vendor/
+tests/.phpunit.result.cache

@@ -1,0 +1,34 @@
+From: =?utf-8?q?David_Pr=C3=A9vot?= <taffit@debian.org>
+Date: Sat, 12 Dec 2020 16:21:39 -0400
+Subject: Adapt to recent version of PHPUnit (9)
+
+---
+ tests/Hamcrest/UtilTest.php | 6 ++----
+ 1 file changed, 2 insertions(+), 4 deletions(-)
+
+diff --git a/tests/Hamcrest/UtilTest.php b/tests/Hamcrest/UtilTest.php
+index 7248978..569c947 100644
+--- a/tests/Hamcrest/UtilTest.php
++++ b/tests/Hamcrest/UtilTest.php
+@@ -28,11 +28,9 @@ class UtilTest extends TestCase
+         ));
+     }
+ 
+-    /**
+-     * @expectedException InvalidArgumentException
+-     */
+     public function testCheckAllAreMatchersFailsForPrimitive()
+     {
++        $this->expectException('InvalidArgumentException');
+         \Hamcrest\Util::checkAllAreMatchers(array(
+             new \Hamcrest\Text\MatchesPattern('/fo+/'),
+             'foo',
+@@ -42,7 +40,7 @@ class UtilTest extends TestCase
+     private function callAndAssertCreateMatcherArray($items)
+     {
+         $matchers = \Hamcrest\Util::createMatcherArray($items);
+-        $this->assertInternalType('array', $matchers);
++        $this->assertIsArray($matchers);
+         $this->assertSameSize($items, $matchers);
+         foreach ($matchers as $matcher) {
+             $this->assertInstanceOf('\Hamcrest\Matcher', $matcher);

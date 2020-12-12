@@ -1,0 +1,7 @@
+#! /bin/sh
+mkdir --parents vendor
+phpab \
+	--template debian/autoload.php.tpl \
+	--output vendor/autoload.php \
+	tests generator
+phpunit --configuration tests/phpunit.xml.dist

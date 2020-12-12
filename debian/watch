@@ -1,0 +1,4 @@
+version=4
+options=uversionmangle=s/-?([^\d.])\.?/~$1/i;tr/A-Z/a-z/ \
+https://github.com/hamcrest/hamcrest-php/releases \
+.*/archive/v?(\d.+).tar.gz
